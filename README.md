@@ -4,6 +4,7 @@ Helper tool for shaping the agile ways of working
 ### Prerequisites
 * You have `node` v4.2 or higher.
 * You have `npm` v3.0 or higher.
+
 ### Build
 Once the repository is cloned, the project can be built by running:
 ```sh
