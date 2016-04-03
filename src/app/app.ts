@@ -1,0 +1,56 @@
+import {Component} from 'angular2/core';
+import {RouteConfig, Router} from 'angular2/router';
+
+import {Home} from './home';
+import {AppState} from './app.service';
+
+/*
+ * App Component
+ * Top Level Component
+ */
+@Component({
+  selector: 'app',
+  styles: [`
+    body {
+      flex: 1 0 auto;
+    }
+    main {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      min-height: 83vh;
+      flex-direction: column;
+    }
+  `],
+  template: `
+    <nav class="cyan darken-4" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Elora</a>
+      </div>
+    </nav>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <footer class="page-footer cyan darken-4">
+      <div class="footer-copyright">
+        <div class="container">
+          Copyright © 2016 Elora. All rights reserved
+        </div>
+      </div>
+    </footer>
+  `
+})
+@RouteConfig([
+  { path: '/', name: 'Home', component: Home, useAsDefault: true },
+])
+export class App {
+  constructor(public appState: AppState) {}
+
+  get state() {
+    return this.appState.get();
+  }
+
+  ngOnInit() {
+    console.log('Initial App State', this.state);
+  }
+}
