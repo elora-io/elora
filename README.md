@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/elora-io/elora.svg?branch=master)](https://travis-ci.org/elora-io/elora)
 # Elora
 Helper tool for shaping the agile ways of working
 ## Setup
