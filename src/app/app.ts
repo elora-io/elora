@@ -26,6 +26,9 @@ import {AppState} from './app.service';
     <nav class="cyan darken-4" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Elora</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+        </ul>
       </div>
     </nav>
     <main>
@@ -33,7 +36,7 @@ import {AppState} from './app.service';
     </main>
     <footer class="page-footer cyan darken-4">
       <div class="footer-copyright">
-        <div class="container">
+        <div class="container right-align">
           Copyright © 2016 Elora. All rights reserved
         </div>
       </div>
