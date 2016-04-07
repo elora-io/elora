@@ -3,12 +3,13 @@ var webpack = require('./config/webpack.prod.js');
 
 var config = {
 	module: {
-
-    loaders: [
-    	{
-		  test: /\.(jpe?g|png|jpg|gif|svg)$/i,
-		  loader:'file'
-		}
-    ]
-  }
+	    loaders: [
+	    	{
+			  test: /\.(jpe?g|png|jpg|gif|svg)$/i,
+			  loader:'file'
+			}
+	    ]
+  	}
 }
+
+module.exports = config;
