@@ -244,7 +244,7 @@ module.exports = {
     // Copies project static assets.
     //
     // See: https://www.npmjs.com/package/copy-webpack-plugin
-    new CopyWebpackPlugin([{from: 'src/assets', to: 'assets'}]),
+    new CopyWebpackPlugin([{from: 'src/assets', to: '../assets'}]),
 
     // Plugin: HtmlWebpackPlugin
     // Description: Simplifies creation of HTML files to serve your webpack bundles.
