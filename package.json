@@ -45,7 +45,6 @@
     "angular2": "^2.0.0-beta.13",
     "core-js": "^2.1.5",
     "node-sass": "^3.4.2",
-    "npm-assets": "^0.1.1",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "^0.6.6"
   },
@@ -101,11 +100,5 @@
   "engines": {
     "node": ">= 4.2.1",
     "npm": ">= 3"
-  },
-  "assets": [
-    "ahmed.jpg",
-    "maziar.jpg",
-    "favicon.png",
-    "application.json"
-  ]
+  }
 }
