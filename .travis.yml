@@ -9,3 +9,6 @@ node_js:
 - '5'
 notifications:
   slack: elora:cLsQ93xDY8AccaL3cBSrjx14
+branches:
+  only:
+    - master
