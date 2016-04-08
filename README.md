@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/elora-io/elora.svg?branch=master)](https://travis-ci.org/elora-io/elora)
+[![Dependency Status](https://www.versioneye.com/user/projects/5707d458fcd19a00415b0f2a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5707d458fcd19a00415b0f2a)
 # Elora
 Helper tool for shaping the agile ways of working
 ## Setup
