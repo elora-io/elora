@@ -2,6 +2,8 @@ import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
 import {Home} from './home';
+import {Login} from './login';
+import {Profile} from './profile';
 import {AppState} from './app.service';
 
 /*
@@ -44,7 +46,9 @@ import {AppState} from './app.service';
   `
 })
 @RouteConfig([
-  { path: '/', name: 'Home', component: Home, useAsDefault: true },
+  { path: '/home', name: 'Home', component: Home, useAsDefault: true },
+  { path: '/login', name: 'Login', component: Login }, //TODO: only display nav and footer when use is logged in
+  { path: '/profile', name: 'Profile', component: Profile } //TODO: Configure profile to take in params
 ])
 export class App {
   constructor(public appState: AppState) {}
@@ -54,6 +58,6 @@ export class App {
   }
 
   ngOnInit() {
-    console.log('Initial App State', this.state);
+    console.log('Initial App State', this.state); //Debugging purpose
   }
 }

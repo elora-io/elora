@@ -1,8 +1,6 @@
 var express = require('express');
 var path = require('path');
 var http = require('http');
-var httpProxy = require('http-proxy');
-var proxy = httpProxy.createProxyServer();
 var app = express();
 var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? process.env.PORT : 8080;
