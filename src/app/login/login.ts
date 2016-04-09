@@ -1,9 +1,14 @@
 import { Component } from 'angular2/core';
 import { Router, RouterLink } from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers } from 'angular2/http';
 
 @Component({
 	selector: 'login',  // <login></login>
+	styles: [`
+    .login-form {
+      margin-top: 200px;
+    }
+	`],
   template: require('./login.html')
 })
 export class Login {
@@ -12,17 +17,19 @@ export class Login {
 
 	login(event, username, password) {
     event.preventDefault();
-    let credentials = JSON.stringify({ username, password });
-    //TODO: Authenticate
-		this.http.post('https://jira.platform.dev.sdt.ericsson.se/jira/rest/auth/1/session', credentials)
-		  .subscribe(
+		let authHeader = new Headers();
+		let encodedUsernamePassword = btoa(username + ':' + password);
+
+		authHeader.append('Authorization', 'Basic ' + encodedUsernamePassword);
+		//TODO: Fix response to match what is returned on rest client, and save user on local storage (use this information to populate profile page)
+		this.http.get('https://jira.platform.dev.sdt.ericsson.se/rest/api/2/user/search?username=' + username, { headers: authHeader })
+			.subscribe(
 	        response => {
-			  console.log('logged in: ' + response);
-	          //TODO: Save session header & route to default page
-	          //this.router.parent.navigateByUrl('/home');
+						localStorage.setItem('credentials', encodedUsernamePassword);
+						this.router.parent.navigateByUrl('/home');
 	      },
 	      error => {
-	        console.log(error.text()); //TODO: Display errors on log in page
+	        console.log('error ' + error.text()); //TODO: Display errors on log in page
 	      }
 	    );
 	}

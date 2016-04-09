@@ -18,4 +18,5 @@ import {Component} from 'angular2/core';
 export class Profile {
   constructor() {
   }
+  //TODO: Grab basic user information from local storage. figure out how to get xxxlarge images displayed without being logged in to jira.
 }
