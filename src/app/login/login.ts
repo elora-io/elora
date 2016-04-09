@@ -14,16 +14,7 @@ export class Login {
     event.preventDefault();
     let credentials = JSON.stringify({ username, password });
     //TODO: Authenticate
-		var loginArgs = {
-      data: {
-	        "username": "*",
-              "password": "*"
-		  },
-			headers: {
-		        "Content-Type": "application/json"
-      } 
-		};
-		this.http.post('https://jira.platform.dev.sdt.ericsson.se/jira/rest/auth/1/session', loginArgs)
+		this.http.post('https://jira.platform.dev.sdt.ericsson.se/jira/rest/auth/1/session', credentials)
 		  .subscribe(
 	        response => {
 			  console.log('logged in: ' + response);
