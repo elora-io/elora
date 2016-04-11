@@ -3,7 +3,7 @@ import {Router, RouterOutlet, ComponentInstruction} from 'angular2/router';
 import {Login} from './login';
 
 @Directive({
-  selector: 'logged-in-router-outlet'
+  selector: 'elora-router-outlet'
 })
 export class LoggedInRouterOutlet extends RouterOutlet {
   publicRoutes: any;

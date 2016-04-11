@@ -36,7 +36,7 @@ import {AppState} from './app.service';
       </div>
     </nav>
     <main>
-      <logged-in-router-outlet></logged-in-router-outlet>
+      <elora-router-outlet></elora-router-outlet>
     </main>
     <footer class="page-footer cyan darken-4" *ngIf="isLoggedIn()">
       <div class="footer-copyright">
