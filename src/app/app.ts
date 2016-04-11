@@ -30,9 +30,6 @@ import {AppState} from './app.service';
     <nav class="cyan darken-4" role="navigation" *ngIf="isLoggedIn()">
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">Elora</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-        </ul>
       </div>
     </nav>
     <main>
