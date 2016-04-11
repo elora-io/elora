@@ -2,15 +2,15 @@ import {Component} from 'angular2/core';
 
 @Component({
   selector: 'profile',  // <profile></profile>
-	styles: [`
+  styles: [`
     .profile-content {
-			display: flex;
+      display: flex;
     }
     .profile-display-name {
-    	margin-top: 0px;
+      margin-top: 0px;
     }
     .profile-basic-info {
-    	margin-left: 10px;
+      margin-left: 10px;
     }
   `],
   template: require('./profile.html')
@@ -18,5 +18,6 @@ import {Component} from 'angular2/core';
 export class Profile {
   constructor() {
   }
-  //TODO: Grab basic user information from local storage. figure out how to get xxxlarge images displayed without being logged in to jira.
+  //TODO: Grab basic user information from local storage. 
+  //figure out how to get xxxlarge images displayed without being logged in to jira.
 }

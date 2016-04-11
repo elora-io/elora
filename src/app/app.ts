@@ -49,8 +49,8 @@ import {AppState} from './app.service';
 })
 @RouteConfig([
   { path: '/home', name: 'Home', component: Home, useAsDefault: true },
-  { path: '/login', name: 'Login', component: Login }, //TODO: only display nav and footer when use is logged in
-  { path: '/profile', name: 'Profile', component: Profile } //TODO: Configure profile to take in params
+  { path: '/login', name: 'Login', component: Login },
+  { path: '/profile', name: 'Profile', component: Profile }
 ])
 export class App {
   constructor(public appState: AppState) {}
@@ -60,10 +60,10 @@ export class App {
   }
 
   ngOnInit() {
-    console.log('Initial App State', this.state); //Debugging purpose
+    console.log('Initial App State', this.state);
   }
 
   isLoggedIn() {
-    return !!localStorage.getItem('credentials'); //TODO: Log out; This will delete the local storage item credentials 
+    return !!localStorage.getItem('credentials');
   }
 }
