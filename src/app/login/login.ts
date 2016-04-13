@@ -12,7 +12,7 @@ import { Http, Headers } from 'angular2/http';
   template: require('./login.html')
 })
 export class Login {
-  constructor(public router: Router, public http: Http) {
+  constructor(public _router: Router, public http: Http) {
   }
 
   login(event, username, password) {
@@ -27,7 +27,7 @@ export class Login {
         .subscribe(
             response => {
               localStorage.setItem('credentials', encodedUsernamePassword);
-              this.router.parent.navigateByUrl('/home');
+              this._router.navigate(['Home']);
           },
           error => {
             //TODO: Display errors on log in page

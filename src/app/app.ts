@@ -27,17 +27,23 @@ import {AppState} from './app.service';
     }
   `],
   template: `
-    <nav class="cyan darken-4" role="navigation" *ngIf="isLoggedIn()">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">Elora</a>
-      </div>
-    </nav>
+    <div class="navbar-fixed">
+      <nav class="cyan darken-4" role="navigation" *ngIf="isLoggedIn()">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="#" class="brand-logo">Elora</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#/profile">Profile</a></li>
+            <li (click) = "logout()"><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <main>
       <elora-router-outlet></elora-router-outlet>
     </main>
     <footer class="page-footer cyan darken-4" *ngIf="isLoggedIn()">
       <div class="footer-copyright">
-        <div class="container right-align">
+        <div class="container center-align">
           Copyright © 2016 Elora. All rights reserved
         </div>
       </div>
@@ -50,7 +56,7 @@ import {AppState} from './app.service';
   { path: '/profile', name: 'Profile', component: Profile }
 ])
 export class App {
-  constructor(public appState: AppState) {}
+  constructor(public appState: AppState, public _router: Router) {}
 
   get state() {
     return this.appState.get();
@@ -62,5 +68,10 @@ export class App {
 
   isLoggedIn() {
     return !!localStorage.getItem('credentials');
+  }
+
+  logout() {
+    localStorage.removeItem('credentials');
+    this._router.navigate(['Login']);
   }
 }
